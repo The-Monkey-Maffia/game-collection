@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        availableTowers.Add();
+        availableTowers.Add(towers[Random.Range(0, towers.Length)]);
     }
 
     // Update is called once per frame
