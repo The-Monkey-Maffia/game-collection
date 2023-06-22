@@ -7,9 +7,11 @@ public class controllerMovement : MonoBehaviour
 {
     public float movementSpeed = 0.6f;
     public Rigidbody rb;
+    public float dashCooldown = 5f;
 
     private float xInput;
     private float yInput;
+
 
     // Start is called as you start the game, we use it to initially give values to things
     void Start()
@@ -35,10 +37,9 @@ public class controllerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector3(xInput, 0f, yInput) * movementSpeed);
 
-
             if (Gamepad.all[0].aButton.isPressed)
             {
-
+                rb.AddForce(new Vector3(xInput, 0f, yInput) * 10);
             }
 
             if (Gamepad.all[0].startButton.isPressed)
