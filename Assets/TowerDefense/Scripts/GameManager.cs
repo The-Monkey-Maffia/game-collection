@@ -8,15 +8,16 @@ public class GameManager : MonoBehaviour
     public int[] units = {0, 1};
     public int health = 100;
 
-    public int[] availableTowers = {};
-    public int[] availableUnits = {};
+    public List<int> availableTowers = new List<int>();
+    public List<int> availableUnits = new List<int>();
+    
     public int nextTower = 0;
     public int nextUnit = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        availableTowers.Add(towers[Random.Range(0, towers.Length)]);
     }
 
     // Update is called once per frame
