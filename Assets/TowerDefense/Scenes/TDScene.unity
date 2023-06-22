@@ -1048,8 +1048,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1482751570}
+  - component: {fileID: 1482751571}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1070,6 +1071,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1482751571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482751569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43eae2559062595428bb69038c336078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: 0000000001000000
+  units: 0000000001000000
+  health: 100
+  towerPrefabs:
+  - {fileID: 4416489177431151897, guid: 64f0a409e72db304daafd05137d1fb94, type: 3}
+  - {fileID: 4220047688814515800, guid: 8b01db4d8f7fabf40862fab4bda88c55, type: 3}
+  unitPrefabs:
+  - {fileID: 2403879308200463037, guid: 92950e57a9d205941b6e5a1a6657af02, type: 3}
+  - {fileID: 4031965885739121944, guid: d17be1551b8f7074f9e1ffdda1d94cbf, type: 3}
+  availableTowers: 
+  availableUnits: 
+  nextTower: 0
+  nextUnit: 0
 --- !u!1 &1571797366
 GameObject:
   m_ObjectHideFlags: 0
