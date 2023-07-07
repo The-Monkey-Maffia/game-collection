@@ -1,19 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
-    public Transform firepoint1;
-    public Transform firepoint2;
+    PlayerControls controls;
 
-    public GameObject bullet;
+    public Transform firePoint;
+    public GameObject bulletPrefab;
 
-    public float bulletforce = 20;
+    public float bulletForce;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        controls.Shooting.Shoot.performed += ctx => shoot();
+    }
+
+    void Awake()
+    {
+        controls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        controls.Shooting.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Shooting.Disable();
+    }
+
+    void shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
 }

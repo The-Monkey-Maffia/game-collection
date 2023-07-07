@@ -78,7 +78,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Shoot"",
                     ""type"": ""Value"",
-                    ""id"": ""32fa9581-dd79-41ad-bb3f-7cc8919aa931"",
+                    ""id"": ""0b5878a8-178e-4441-9436-2a19abf71d52"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -88,8 +88,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""6cd5c590-0b17-4b77-a115-64a12ae19d21"",
-                    ""path"": """",
+                    ""id"": ""b685a849-2768-4314-a6d0-6e0b35e8a2ec"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
