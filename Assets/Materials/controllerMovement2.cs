@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class controllerMovement : MonoBehaviour
+public class controllerMovement2 : MonoBehaviour
 {
     public float movementSpeed = 0.8f;
     public Rigidbody rb;
@@ -11,28 +11,26 @@ public class controllerMovement : MonoBehaviour
 
     private float xInput;
     private float yInput;
-
-
-    // Start is called as you start the game, we use it to initially give values to things
+    // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Gamepad.all.Count);
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        movementControllerPlayer1();
-        ProcessInputs();
+        movementControllerPlayer2();
+        ProcessInputs2();
     }
 
-    private void ProcessInputs()
+    private void ProcessInputs2()
     {
-        xInput = Input.GetAxis("Horizontal");
-        yInput = Input.GetAxis("Vertical");
+        xInput = Input.GetAxis("Horizontal2");
+        yInput = Input.GetAxis("Vertical2");
     }
 
-    private void movementControllerPlayer1()
+    private void movementControllerPlayer2()
     {
         if (Gamepad.all.Count > 0)
         {
