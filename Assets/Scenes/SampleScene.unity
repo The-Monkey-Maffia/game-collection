@@ -450,9 +450,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1292105042477495337, guid: fd8aca38b809b5a4bb89cef049e04fa1, type: 3}
+      propertyPath: m_Drag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292105042477495338, guid: fd8aca38b809b5a4bb89cef049e04fa1, type: 3}
+      propertyPath: knockbackForce
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1292105042477495340, guid: fd8aca38b809b5a4bb89cef049e04fa1, type: 3}
       propertyPath: m_Name
       value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292105042477495340, guid: fd8aca38b809b5a4bb89cef049e04fa1, type: 3}
+      propertyPath: m_TagString
+      value: Ball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8aca38b809b5a4bb89cef049e04fa1, type: 3}
@@ -463,6 +475,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4059893074012938160, guid: 24151cd8c1f9bc94abe9d1eb10fb9457, type: 3}
+      propertyPath: m_Drag
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4059893074012938161, guid: 24151cd8c1f9bc94abe9d1eb10fb9457, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -510,6 +526,18 @@ PrefabInstance:
     - target: {fileID: 4059893074012938165, guid: 24151cd8c1f9bc94abe9d1eb10fb9457, type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059893074012938165, guid: 24151cd8c1f9bc94abe9d1eb10fb9457, type: 3}
+      propertyPath: m_TagString
+      value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059893074012938175, guid: 24151cd8c1f9bc94abe9d1eb10fb9457, type: 3}
+      propertyPath: movementSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059893074012938175, guid: 24151cd8c1f9bc94abe9d1eb10fb9457, type: 3}
+      propertyPath: knockbackForce
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4490900854973698149, guid: 24151cd8c1f9bc94abe9d1eb10fb9457, type: 3}

@@ -8,6 +8,7 @@ public class controllerMovement2 : MonoBehaviour
     public float movementSpeed = 0.8f;
     public Rigidbody rb;
     public float dashCooldown = 2f;
+    public float knockbackForce = 3f;
 
     private float xInput;
     private float yInput;
@@ -47,6 +48,19 @@ public class controllerMovement2 : MonoBehaviour
             {
                 Debug.Log("PAUSE MENU");
             }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            Rigidbody otherRb = collision.gameObject.GetComponent<Rigidbody>();
+            Vector3 direction = collision.contacts[0].point - transform.position;
+            direction = direction.normalized;
+
+            // Apply knockback force to the other ball
+            otherRb.AddForce(direction * knockbackForce, ForceMode.Impulse);
         }
     }
 }
