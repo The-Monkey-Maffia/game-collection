@@ -9,6 +9,8 @@ public class controllerMovement2 : MonoBehaviour
     public Rigidbody rb;
     public float dashCooldown = 2f;
     public float knockbackForce = 3f;
+    public float dashKnockbackForce = 6f;
+
 
     private float xInput;
     private float yInput;
@@ -61,6 +63,16 @@ public class controllerMovement2 : MonoBehaviour
 
             // Apply knockback force to the other ball
             otherRb.AddForce(direction * knockbackForce, ForceMode.Impulse);
+
+            if (dashCooldown >= 1)
+            {
+                otherRb.AddForce(direction * dashKnockbackForce, ForceMode.Impulse);
+
+            }
+            else
+            {
+                otherRb.AddForce(direction * knockbackForce, ForceMode.Impulse);
+            }
         }
     }
 }
