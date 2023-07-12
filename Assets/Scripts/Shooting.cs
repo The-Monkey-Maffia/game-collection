@@ -12,30 +12,24 @@ public class Shooting : MonoBehaviour
 
     public float bulletForce;
 
+    public void onShoot(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        }
+    }
     void Update()
     {
-        controls.Shooting.Shoot.performed += ctx => shoot();
+        
     }
-
-    void Awake()
-    {
-        controls = new PlayerControls();
-    }
-
-    private void OnEnable()
-    {
-        controls.Shooting.Enable();
-    }
-
-    private void OnDisable()
-    {
-        controls.Shooting.Disable();
-    }
-
-    void shoot()
+    
+    /*void shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-    }
+    }*/
 }

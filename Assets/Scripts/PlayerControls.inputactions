@@ -27,7 +27,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "f1d1f42d-3038-43ef-9311-2b2bc304ca0b",
+                    "id": "e026f271-f103-4f95-967d-b78f3e61cc2e",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
@@ -38,7 +38,7 @@
                 },
                 {
                     "name": "",
-                    "id": "81fac68f-01d6-4ee4-bc23-9134eb3f4a25",
+                    "id": "654ffdda-c502-4639-8ae2-0f7f2255a525",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
@@ -66,19 +66,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "b685a849-2768-4314-a6d0-6e0b35e8a2ec",
+                    "id": "7db8abac-a25b-463b-a2b3-c2efa9c61973",
                     "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9b029504-4592-4076-bb9a-2b8816944a0c",
-                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

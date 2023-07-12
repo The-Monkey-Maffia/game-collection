@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
 
-    PlayerControls controls;
+    //PlayerControls controls;
     public float RotationSpeed = 0.4f;
 
     Vector2 move;
@@ -16,15 +16,10 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rb;
 
 
-    void Awake()
+    /*void Awake()
     {
         controls = new PlayerControls();
-
-        controls.Movement.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
-        controls.Movement.Move.canceled += ctx => move = Vector2.zero;
-
-        controls.Movement.Rotate.performed += ctx => rotate = ctx.ReadValue<Vector2>();
-    }
+    }*/
 
     void Update()
     {
@@ -35,7 +30,7 @@ public class Movement : MonoBehaviour
         rb.rotation = angle;
     }
 
-    void OnEnable()
+    /*void OnEnable()
     {
         controls.Movement.Enable();
     }
@@ -43,6 +38,8 @@ public class Movement : MonoBehaviour
     void OnDisable()
     {
         controls.Movement.Disable();
-    }
+    }*/
 
+    public void OnMove(InputAction.CallbackContext ctx) => move = ctx.ReadValue<Vector2>();
+    public void OnRotate(InputAction.CallbackContext ctx) => rotate = ctx.ReadValue<Vector2>();
 }
