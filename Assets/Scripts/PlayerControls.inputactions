@@ -28,7 +28,7 @@
                 {
                     "name": "",
                     "id": "f1d1f42d-3038-43ef-9311-2b2bc304ca0b",
-                    "path": "<Gamepad>/rightStick",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -68,6 +68,17 @@
                     "name": "",
                     "id": "b685a849-2768-4314-a6d0-6e0b35e8a2ec",
                     "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b029504-4592-4076-bb9a-2b8816944a0c",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
