@@ -44,6 +44,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Value"",
+                    ""id"": ""44fbc442-40fe-4ce9-b1d2-ebd4ac539769"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -68,27 +77,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Shooting"",
-            ""id"": ""85e25e8d-fae9-4eb5-b46c-b895e54bc6fd"",
-            ""actions"": [
-                {
-                    ""name"": ""Shoot"",
-                    ""type"": ""Value"",
-                    ""id"": ""0b5878a8-178e-4441-9436-2a19abf71d52"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                }
-            ],
-            ""bindings"": [
+                },
                 {
                     ""name"": """",
-                    ""id"": ""7db8abac-a25b-463b-a2b3-c2efa9c61973"",
+                    ""id"": ""d97c0050-a288-42d1-9411-43ce14a4c9d0"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -106,9 +98,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Rotate = m_Movement.FindAction("Rotate", throwIfNotFound: true);
         m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
-        // Shooting
-        m_Shooting = asset.FindActionMap("Shooting", throwIfNotFound: true);
-        m_Shooting_Shoot = m_Shooting.FindAction("Shoot", throwIfNotFound: true);
+        m_Movement_Shoot = m_Movement.FindAction("Shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -170,12 +160,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IMovementActions m_MovementActionsCallbackInterface;
     private readonly InputAction m_Movement_Rotate;
     private readonly InputAction m_Movement_Move;
+    private readonly InputAction m_Movement_Shoot;
     public struct MovementActions
     {
         private @PlayerControls m_Wrapper;
         public MovementActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Rotate => m_Wrapper.m_Movement_Rotate;
         public InputAction @Move => m_Wrapper.m_Movement_Move;
+        public InputAction @Shoot => m_Wrapper.m_Movement_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -191,6 +183,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnMove;
+                @Shoot.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnShoot;
             }
             m_Wrapper.m_MovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -201,50 +196,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-            }
-        }
-    }
-    public MovementActions @Movement => new MovementActions(this);
-
-    // Shooting
-    private readonly InputActionMap m_Shooting;
-    private IShootingActions m_ShootingActionsCallbackInterface;
-    private readonly InputAction m_Shooting_Shoot;
-    public struct ShootingActions
-    {
-        private @PlayerControls m_Wrapper;
-        public ShootingActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Shoot => m_Wrapper.m_Shooting_Shoot;
-        public InputActionMap Get() { return m_Wrapper.m_Shooting; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(ShootingActions set) { return set.Get(); }
-        public void SetCallbacks(IShootingActions instance)
-        {
-            if (m_Wrapper.m_ShootingActionsCallbackInterface != null)
-            {
-                @Shoot.started -= m_Wrapper.m_ShootingActionsCallbackInterface.OnShoot;
-                @Shoot.performed -= m_Wrapper.m_ShootingActionsCallbackInterface.OnShoot;
-                @Shoot.canceled -= m_Wrapper.m_ShootingActionsCallbackInterface.OnShoot;
-            }
-            m_Wrapper.m_ShootingActionsCallbackInterface = instance;
-            if (instance != null)
-            {
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
             }
         }
     }
-    public ShootingActions @Shooting => new ShootingActions(this);
+    public MovementActions @Movement => new MovementActions(this);
     public interface IMovementActions
     {
         void OnRotate(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
-    }
-    public interface IShootingActions
-    {
         void OnShoot(InputAction.CallbackContext context);
     }
 }

@@ -15,12 +15,6 @@ public class Movement : MonoBehaviour
 
     public Rigidbody2D rb;
 
-
-    /*void Awake()
-    {
-        controls = new PlayerControls();
-    }*/
-
     void Update()
     {
         rb.velocity = new Vector2((move.x * speed), (move.y * speed));

@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Value",
+                    "id": "44fbc442-40fe-4ce9-b1d2-ebd4ac539769",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -46,27 +55,10 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Shooting",
-            "id": "85e25e8d-fae9-4eb5-b46c-b895e54bc6fd",
-            "actions": [
-                {
-                    "name": "Shoot",
-                    "type": "Value",
-                    "id": "0b5878a8-178e-4441-9436-2a19abf71d52",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "7db8abac-a25b-463b-a2b3-c2efa9c61973",
+                    "id": "d97c0050-a288-42d1-9411-43ce14a4c9d0",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
