@@ -18,7 +18,6 @@ public class controllerMovement2 : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        Debug.Log(Gamepad.all.Count);
     }
 
     // Update is called once per frame
