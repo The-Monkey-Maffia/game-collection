@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class controllerMovement : MonoBehaviour
 {
+    public static bool gameIsPaused = false;
+
     public float movementSpeed;
     public Rigidbody rb;
     public float dashCooldown = 2f;
@@ -49,7 +51,13 @@ public class controllerMovement : MonoBehaviour
 
             if (Gamepad.all[0].startButton.isPressed)
             {
-                Debug.Log("PAUSE MENU");
+                if (gameIsPaused)
+                {
+                    resume();
+                } else
+                {
+                    pause();
+                }
             }
         }
     }
@@ -76,4 +84,16 @@ public class controllerMovement : MonoBehaviour
             }
         }
     }
+/*
+    void resume()
+    {
+
+    }
+
+    void pause()
+    {
+        pausemenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+*/
 }
