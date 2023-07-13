@@ -1050,9 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1292105042477495338, guid: fd8aca38b809b5a4bb89cef049e04fa1, type: 3}
       propertyPath: movementSpeed
-      value: 10
-      propertyPath: knockbackForce
-      value: 3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1292105042477495340, guid: fd8aca38b809b5a4bb89cef049e04fa1, type: 3}
       propertyPath: m_Name
