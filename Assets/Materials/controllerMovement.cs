@@ -46,6 +46,17 @@ public class controllerMovement : MonoBehaviour
                 dashCooldown = 2f;
                 rb.AddForce(new Vector3(xInput, 0f, -yInput) * 200);
             }
+
+            if (Gamepad.all[0].startButton.isPressed)
+            {
+                if (gameIsPaused)
+                {
+                    /* resume(); */
+                } else
+                {
+                    /* pause(); */
+                }
+            }
         }
     }
 
