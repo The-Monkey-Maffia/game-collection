@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class controllerMovement : MonoBehaviour
 {
-    public float movementSpeed = 0.8f;
+    public float movementSpeed;
     public Rigidbody rb;
     public float dashCooldown = 2f;
 
@@ -42,7 +42,7 @@ public class controllerMovement : MonoBehaviour
             if (Gamepad.all[0].aButton.isPressed && dashCooldown <= 0)
             {
                 dashCooldown = 2f;
-                rb.AddForce(new Vector3(xInput, 0f, -yInput) * 300);
+                rb.AddForce(new Vector3(xInput, 0f, -yInput) * 200);
             }
 
             if (Gamepad.all[0].startButton.isPressed)

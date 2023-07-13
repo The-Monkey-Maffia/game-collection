@@ -34,13 +34,13 @@ public class controllerMovement2 : MonoBehaviour
     {
         if (Gamepad.all.Count > 0)
         {
-            rb.AddForce(new Vector3(xInput, 0f, yInput) * movementSpeed);
+            rb.AddForce(new Vector3(xInput, 0f, -yInput) * movementSpeed);
             dashCooldown -= Time.deltaTime;
 
             if (Gamepad.all[0].aButton.isPressed && dashCooldown <= 0)
             {
                 dashCooldown = 2f;
-                rb.AddForce(new Vector3(xInput, 0f, yInput) * 300);
+                rb.AddForce(new Vector3(xInput, 0f, -yInput) * 300);
             }
 
             if (Gamepad.all[0].startButton.isPressed)
