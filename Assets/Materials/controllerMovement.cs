@@ -53,10 +53,10 @@ public class controllerMovement : MonoBehaviour
             {
                 if (gameIsPaused)
                 {
-                    resume();
+                    /* resume(); */
                 } else
                 {
-                    pause();
+                    /* pause(); */
                 }
             }
         }
