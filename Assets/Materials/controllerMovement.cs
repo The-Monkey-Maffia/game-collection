@@ -7,6 +7,8 @@ public class controllerMovement : MonoBehaviour
 {
     public static bool gameIsPaused = false;
 
+    public GameObject pausemenu;
+
     public float movementSpeed;
     public Rigidbody rb;
     public float dashCooldown = 2f;
@@ -84,16 +86,19 @@ public class controllerMovement : MonoBehaviour
             }
         }
     }
-/*
+
     void resume()
     {
-
+        pausemenu.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false; ;
     }
 
     void pause()
     {
         pausemenu.SetActive(true);
         Time.timeScale = 0f;
+        gameIsPaused = true;
     }
-*/
+
 }

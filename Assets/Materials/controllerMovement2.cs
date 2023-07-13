@@ -35,18 +35,18 @@ public class controllerMovement2 : MonoBehaviour
 
     private void movementControllerPlayer2()
     {
-        if (Gamepad.all.Count > 1)
+        if (Gamepad.all.Count > 0)
         {
             rb.AddForce(new Vector3(xInput, 0f, -yInput) * movementSpeed);
             dashCooldown -= Time.deltaTime;
 
-            if (Gamepad.all[1].aButton.isPressed && dashCooldown <= 0)
+            if (Gamepad.all[0].aButton.isPressed && dashCooldown <= 0)
             {
                 dashCooldown = 2f;
                 rb.AddForce(new Vector3(xInput, 0f, -yInput) * 300);
             }
 
-            if (Gamepad.all[1].startButton.isPressed)
+            if (Gamepad.all[0].startButton.isPressed)
             {
                 Debug.Log("PAUSE MENU");
             }
