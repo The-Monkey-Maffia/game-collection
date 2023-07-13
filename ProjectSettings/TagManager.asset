@@ -8,6 +8,7 @@ TagManager:
   - Meteor
   - BulletP2
   - BulletP1
+  - Ball
   layers:
   - Default
   - TransparentFX
