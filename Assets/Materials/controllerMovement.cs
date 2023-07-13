@@ -5,10 +5,6 @@ using UnityEngine.InputSystem;
 
 public class controllerMovement : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
-
-    public GameObject pausemenu;
-
     public float movementSpeed;
     public Rigidbody rb;
     public float dashCooldown = 2f;
@@ -50,17 +46,6 @@ public class controllerMovement : MonoBehaviour
                 dashCooldown = 2f;
                 rb.AddForce(new Vector3(xInput, 0f, -yInput) * 200);
             }
-
-            if (Gamepad.all[0].startButton.isPressed)
-            {
-                if (gameIsPaused)
-                {
-                    resume();
-                } else
-                {
-                    pause();
-                }
-            }
         }
     }
 
@@ -85,20 +70,6 @@ public class controllerMovement : MonoBehaviour
                 otherRb.AddForce(direction * knockbackForce, ForceMode.Impulse);
             }
         }
-    }
-
-    void resume()
-    {
-        pausemenu.SetActive(false);
-        Time.timeScale = 1f;
-        gameIsPaused = false; ;
-    }
-
-    void pause()
-    {
-        pausemenu.SetActive(true);
-        Time.timeScale = 0f;
-        gameIsPaused = true;
     }
 
 }
