@@ -5,37 +5,34 @@ using UnityEngine.InputSystem;
 
 public class ControllerMovement : MonoBehaviour
 {
-    public float movementSpeed = 0.8f;
-    public Rigidbody2D rb;
+    public int playerNumber;
 
+    public string horizontalAxis;
+    public string verticalAxis;
+    public string rotateAxis;
 
-    private float xInput;
-    private float yInput;
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody2D rb;
+    private float moveSpeed = 5f;
+    public float rotationSpeed = 180f;
+
+    private void Awake()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        movementControllerPlayer();
-        ProcessInputs();
-    }
+        float moveHorizontal = Input.GetAxis(horizontalAxis);
+        float moveVertical = Input.GetAxis(verticalAxis);
+        float rotateInput = Input.GetAxis(rotateAxis);
 
-    private void ProcessInputs()
-    {
-        xInput = Input.GetAxis("Horizontal");
-        yInput = Input.GetAxis("Vertical");
-    }
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        rb.velocity = movement * moveSpeed;
 
-    private void movementControllerPlayer()
-    {
-        if (Gamepad.all.Count > 0)
+        if (Mathf.Abs(rotateInput) > 0.1f)
         {
-            rb.AddForce(new Vector3(xInput, 0f, yInput) * movementSpeed);
-
+            float rotationAmount = rotateInput * rotationSpeed * Time.fixedDeltaTime;
+            rb.rotation += rotationAmount;
         }
     }
 }
