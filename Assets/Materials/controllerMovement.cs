@@ -49,13 +49,7 @@ public class controllerMovement : MonoBehaviour
 
             if (Gamepad.all[0].startButton.isPressed)
             {
-                if (gameIsPaused)
-                {
-                    /* resume(); */
-                } else
-                {
-                    /* pause(); */
-                }
+                Debug.Log("POTENTIAL PAUSE MENU");
             }
         }
     }

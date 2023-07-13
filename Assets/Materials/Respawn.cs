@@ -7,7 +7,6 @@ public class Respawn : MonoBehaviour
     public float threshold;
     public Transform respawnPoint;
     public int lives = 3;
-    public Rigidbody rb;
 
     void Start()
     {
